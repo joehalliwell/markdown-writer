@@ -21,6 +21,7 @@ public class TestMarkdownWriter {
 		writer.p("A landslide has injured more than {} people", 20);
 		writer.h2("A subheading");
 		writer.blockquote("This is some text\nIt will be blockquoted\nEven though it has nice breaks");
+		writer.blockquote(loremIpsum);
 		System.out.println(output.toString());
 	}
 

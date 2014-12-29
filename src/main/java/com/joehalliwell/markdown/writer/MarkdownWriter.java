@@ -70,12 +70,12 @@ public class MarkdownWriter {
 	public void blockquote(String text, Object... args) throws IOException {
 		nl();
 		text = format(text, args);
+		text = WordUtils.wrap(text, maxColumns - 2, null, wrapLongWords);
 		for (String line : lines(text)) {
 			write("> ");
 			write(line);
 			nl();
 		}
-		nl();
 	}
 	
 	public void nl() throws IOException {
